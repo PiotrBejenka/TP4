@@ -25,6 +25,7 @@ RECT drawArea2 = { 500, 0, 700, 1000 };
 int value;
 int i = 0;
 int pasazerowie = 0;
+int r = 0;
 
 const int floor1 = 400, floor2 = 300, floor3 = 200, floor4 = 100, floor5 = 0;
 
@@ -42,18 +43,23 @@ INT_PTR CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
 
 void poziom1() {
 	czekajacy.push_back(floor1);
+	r++;
 }
 void poziom2() {
 	czekajacy.push_back(floor2);
+	r++;
 }
 void poziom3() {
 	czekajacy.push_back(floor3);
+	r++;
 }
 void poziom4() {
 	czekajacy.push_back(floor4);
+	r++;
 }
 void poziom5() {
 	czekajacy.push_back(floor5);
+	r++;
 }
 void docelowe1() {
 	docelowe.push_back(floor1);
@@ -89,7 +95,7 @@ void tekst(HDC hdc)
 
 
 	// Create a string.
-	//WCHAR string[] = L"Iloœæ osób w windzie:";
+	//WCHAR string[] = L"IloÅ“Ã¦ osÃ³b w windzie:";
 
 	string str = intToString(czekajacy.back());
 
@@ -116,8 +122,8 @@ void tekst(HDC hdc)
 
 void ruch() {
 
-//	do
-	//{
+	do
+	{
 	
 	
 		if (i == 0)
@@ -153,6 +159,7 @@ void ruch() {
 				if (docelowe.size() - 1 > 0)
 				{
 					docelowe.erase(docelowe.begin());
+					r--;
 				}
 				
 			}
@@ -172,7 +179,9 @@ void ruch() {
 	
 	
 	//} while (czekajacy.back() =! value);
-}
+	}while (r != 0);
+	
+	}
 
 void MyOnPaint(HDC hdc)
 {
