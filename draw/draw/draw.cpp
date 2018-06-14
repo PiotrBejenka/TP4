@@ -128,58 +128,61 @@ void ruch() {
 	do
 	{
 	
+		//if ( (p+1) * w < u) //jeśli liczba pasażerów plus jeden jest mniejsza niż udźwig windy to jeszcze może zbierać pasażerów
+		//{
+		
 	
-		if (i == 0)
-		{
-			if (czekajacy.front() == value)
+			if (i == 0)
 			{
-				i = 1;
-				Sleep(250);
-				p++;
-				if (czekajacy.size() - 1 > 0)
+				if (czekajacy.front() == value)
 				{
-					czekajacy.erase(czekajacy.begin());
-				}
+					i = 1;
+					Sleep(250);
+					p++;
+					if (czekajacy.size() - 1 > 0)
+					{
+						czekajacy.erase(czekajacy.begin());
+					}
 
-			}
-			else
-			{
-				if (czekajacy.front() > value)
-				{
-					value++;
 				}
 				else
 				{
-					value--;
+					if (czekajacy.front() > value)
+					{
+						value++;
+					}
+					else
+					{
+						value--;
+					}
 				}
-			}
-		}
-		else
-		{
-			if (docelowe.front() == value)
-			{
-				i = 0;
-				r--;
-				p--;
-				Sleep(250);
-				if (docelowe.size() - 1 > 0)
-				{
-					docelowe.erase(docelowe.begin());
-				}
-				
 			}
 			else
 			{
-				if (docelowe.front() > value)
+				if (docelowe.front() == value)
 				{
-					value++;
+					i = 0;
+					r--;
+					p--;
+					Sleep(250);
+					if (docelowe.size() - 1 > 0)
+					{
+						docelowe.erase(docelowe.begin());
+					}
+
 				}
 				else
 				{
-					value--;
+					if (docelowe.front() > value)
+					{
+						value++;
+					}
+					else
+					{
+						value--;
+					}
 				}
 			}
-		}
 	
 	
 	
