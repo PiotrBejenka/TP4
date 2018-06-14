@@ -125,7 +125,10 @@ void tekst(HDC hdc)
 
 void ruch() {
 	
-	do
+	//do
+	//{
+		
+	if(r!=0)
 	{
 	
 		//if ( (p+1) * w < u) //jeśli liczba pasażerów plus jeden jest mniejsza niż udźwig windy to jeszcze może zbierać pasażerów
@@ -185,9 +188,9 @@ void ruch() {
 			}
 	
 	
-	
+	}
 	//} while (czekajacy.back() =! value);
-	}while (r != 0);
+	
 	
 	}
 
