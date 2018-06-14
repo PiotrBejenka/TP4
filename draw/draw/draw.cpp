@@ -26,6 +26,9 @@ int value;
 int i = 0;
 int pasazerowie = 0;
 int r = 0;
+int p = 0;
+const int w = 70;
+const int u = 600;
 
 const int floor1 = 400, floor2 = 300, floor3 = 200, floor4 = 100, floor5 = 0;
 
@@ -121,7 +124,7 @@ void tekst(HDC hdc)
 
 
 void ruch() {
-
+	
 	do
 	{
 	
@@ -132,6 +135,7 @@ void ruch() {
 			{
 				i = 1;
 				Sleep(250);
+				p++;
 				if (czekajacy.size() - 1 > 0)
 				{
 					czekajacy.erase(czekajacy.begin());
@@ -155,11 +159,12 @@ void ruch() {
 			if (docelowe.front() == value)
 			{
 				i = 0;
+				r--;
+				p--;
 				Sleep(250);
 				if (docelowe.size() - 1 > 0)
 				{
 					docelowe.erase(docelowe.begin());
-					r--;
 				}
 				
 			}
